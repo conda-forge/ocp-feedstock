@@ -6,7 +6,7 @@ set -euo pipefail
 # the wrong one when using conda-build. Substitute the right prefix inline.
 CONDA_PREFIX="${PREFIX}" cmake -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
-	-DCMAKE_BUILD_TYPE=MinSizeRel
+	-DCMAKE_BUILD_TYPE=Release
 
 cmake --build build -j ${CPU_COUNT}
 cmake --install build --prefix "${STDLIB_DIR}"

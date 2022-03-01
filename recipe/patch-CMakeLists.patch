@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 11ebf8d..7d1ee60 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -28,7 +28,7 @@ find_package( VTK 9 REQUIRED COMPONENTS WrappingPythonCore RenderingCore CommonD
+ include_directories( ${PROJECT_SOURCE_DIR} )
+ file( GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/*.cpp )
+ 
+-add_library( OCP MODULE ${CPP_FILES} )
++pybind11_add_module( OCP MODULE OPT_SIZE ${CPP_FILES})
+ 
+ target_link_libraries( OCP PRIVATE OPENCASCADE pybind11::pybind11 VTK::WrappingPythonCore VTK::RenderingCore VTK::CommonDataModel VTK::CommonExecutionModel)
+ set_target_properties( OCP
+@@ -54,7 +54,7 @@ else()
+   set_target_properties( OCP
+                          PROPERTIES
+                          CMAKE_CXX_FLAGS_RELEASE "-O3 "
+-                         COMPILE_FLAGS "-fpermissive -fvisibility=hidden -fvisibility-inlines-hidden" )
++                         COMPILE_FLAGS "-fpermissive" )
+ endif()
+ 
+ if(UNIX AND NOT APPLE)
