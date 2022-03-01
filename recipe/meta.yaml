@@ -22,7 +22,8 @@ source:
     folder : src
     patches:
       # use pybind11_add_module() with OPT_SIZE flag instead of add_library() 
-      - patch-CMakeLists.patch
+      - CMakeLists.patch      # [not win]
+      - CmakeLists-win.patch  # [win]
 
 build:
   number: 2
