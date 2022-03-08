@@ -38,11 +38,9 @@ requirements:
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
-    - vtk
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
-    - vtk
 
 test:
   imports:
