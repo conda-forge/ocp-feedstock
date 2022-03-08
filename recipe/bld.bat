@@ -11,7 +11,8 @@ cmake -B build -S "%SRC_DIR%\src" ^
 if errorlevel 1 exit 1
 
 cmake --build build -- -v -k 0
-cmake --build build -- -v -k 0
+cmake --build build -j 1 -- -v -k 0
+cmake --build build -j 1 -- -v -k 0
 if errorlevel 1 exit 1
 
 cmake --install build --prefix "%STDLIB_DIR%"
