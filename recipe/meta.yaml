@@ -19,7 +19,8 @@ source:
     sha256: 91c6daeb06073d760fc3ee5d59609511d5638d9ee666b937d8e8853893cfefc0  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-18.04.zip"  # [linux]
     sha256: f41c0d438e163d0d61f4cd1d1bb83f52bb4cade198df6e62aab7eb538bb7c133  # [linux]
-    folder : src
+    folder: src
+    patches: CMakeLists-Zm10.patch
 
 build:
   number: 2

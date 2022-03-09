@@ -1,8 +1,6 @@
 set CONDA_PREFIX=%PREFIX%
 if errorlevel 1 exit 1
 
-set CL=/Zm20
-
 cmake -B build -S "%SRC_DIR%\src" ^
 	-G Ninja ^
 	-DCMAKE_BUILD_TYPE=Release ^
