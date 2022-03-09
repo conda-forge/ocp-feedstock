@@ -10,17 +10,8 @@ cmake -B build -S "%SRC_DIR%\src" ^
 	-DCMAKE_MODULE_LINKER_FLAGS="/machine:x64 /FORCE:MULTIPLE"
 if errorlevel 1 exit 1
 
-cmake -v --build build -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
-cmake -v --build build -j 1 -- -k 0
+cmake -build build -v -- -K
+cmake --build build -v -j 1 -- -K
 if errorlevel 1 exit 1
 
 cmake --install build --prefix "%STDLIB_DIR%"
