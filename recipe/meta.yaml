@@ -42,6 +42,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
+    - {{ pin_compatible('vtk', max_pin='x.x.x') }}
 
 test:
   imports:
