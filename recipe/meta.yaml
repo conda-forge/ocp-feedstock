@@ -23,7 +23,7 @@ source:
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -39,10 +39,10 @@ requirements:
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
+    - vtk
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
-    - {{ pin_compatible('vtk', max_pin='x.x.x') }}
 
 test:
   imports:
