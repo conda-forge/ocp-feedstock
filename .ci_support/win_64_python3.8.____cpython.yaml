@@ -3,17 +3,15 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
 occt:
-- '7.5'
+- '7.7'
 pin_run_as_build:
   occt:
     max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
-  vtk:
-    max_pin: x.x.x
 pybind11_abi:
 - '4'
 python:
