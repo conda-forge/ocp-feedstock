@@ -23,7 +23,7 @@ source:
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
