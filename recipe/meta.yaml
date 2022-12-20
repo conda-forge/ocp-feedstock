@@ -1,6 +1,6 @@
 {% set name = "ocp" %}
-{% set version = "7.5.3.0" %}
-{% set occt_ver = "7.5.3" %}
+{% set version = "7.6.3.0" %}
+{% set occt_ver = "7.6.3" %}
 
 package:
   name: {{ name }}
@@ -14,16 +14,16 @@ source:
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip"  # [win]
-    sha256: 06df9dd0bd7a2b4d1dfdd8d92c5e9f3d40c8169c102fced803b10f0713af885b  # [win]
+    sha256: a7273a46540eda2201bfc49ccc744deb8b08f0058ace7a334b81a68764e18293  # [win]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_macOS-10.15.zip"   # [osx]
-    sha256: 91c6daeb06073d760fc3ee5d59609511d5638d9ee666b937d8e8853893cfefc0  # [osx]
+    sha256: b63f9e36526ecc08f1e96e601118dbeeea8b9da2ddbb3bdcfe3e02f952f1fe34  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-18.04.zip"  # [linux]
-    sha256: f41c0d438e163d0d61f4cd1d1bb83f52bb4cade198df6e62aab7eb538bb7c133  # [linux]
+    sha256: 5c4679cc01c6b9fa75b45c68424f5611e90a6ad94bec8a2d6e8e3902c1e7e5d3  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 4
+  number: 0
 
 requirements:
   build:
