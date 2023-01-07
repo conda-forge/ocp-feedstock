@@ -27,8 +27,8 @@ build:
 
 requirements:
   build:
-    - python
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - python 3.11
+    - cross-python_{{ target_platform }} 3.11    # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - cmake
     - ninja
@@ -38,13 +38,13 @@ requirements:
     - lld  # [win]
     - vtk
   host:
-    - python
+    - python 3.11
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
     - vtk
   run:
-    - python
+    - python 3.11
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
     - vtk
 
