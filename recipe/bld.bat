@@ -1,4 +1,4 @@
-set CONDA_PREFIX=%BUILD_PREFIX%
+set CONDA_PREFIX=%PREFIX%
 if errorlevel 1 exit 1
 
 cmake %CMAKE_ARGS% -B build -S "%SRC_DIR%\src" ^
