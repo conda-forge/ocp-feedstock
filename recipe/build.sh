@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euo pipefail
 
-find "${PREFIX}/lib"
+# find "${PREFIX}/lib"
+find "${BUILD_PREFIX}/lib"
 
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
 # That is the right prefix when manually running CMake inside a conda env, but
