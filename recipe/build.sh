@@ -6,6 +6,7 @@ set -euo pipefail
 # the wrong one when using conda-build. Substitute the right prefix inline.
 CONDA_PREFIX="${PREFIX}" cmake -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
+	--debug-find \
 	-DPYTHON_EXECUTABLE=${PYTHON} \
 	-DCMAKE_BUILD_TYPE=Release
 
