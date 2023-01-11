@@ -1,9 +1,6 @@
 #!/bin/sh
 set -euo pipefail
 
-echo "PREFIX: ${PREFIX}"
-echo "BUILD_PREFIX: ${BUILD_PREFIX}"
-
 # get vtk library for osx-arm64
 VTK_DIR=${PREFIX}
 if [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
@@ -18,7 +15,7 @@ fi
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
 # That is the right prefix when manually running CMake inside a conda env, but
 # the wrong one when using conda-build. Substitute the right prefix inline.
-CONDA_PREFIX="${BUILD_PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
+CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
 	-DCMAKE_PREFIX_PATH="${VTK_DIR}" \
 	-DPython3_FIND_STRATEGY=LOCATION \

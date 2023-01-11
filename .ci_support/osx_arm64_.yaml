@@ -21,3 +21,7 @@ target_platform:
 - osx-arm64
 vtk:
 - 9.2.2
+
+CONDA_BUILD_SYSROOT:
+- /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+
