@@ -1,15 +1,18 @@
 #!/bin/sh
 set -euo pipefail
 
+echo "PREFIX: ${PREFIX}"
+echo "BUILD_PREFIX: ${BUILD_PREFIX}"
+
 # get vtk library for osx-arm64
-VTK_DIR=${BUILD_PREFIX}
+VTK_DIR=${PREFIX}
 if [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
     VTK_DIR=${RECIPE_DIR}/vtk
     conda list -p ${BUILD_PREFIX} > packages.txt
     cat packages.txt
     VTK_PACKAGE_VERSION=`grep vtk packages.txt | awk -F ' ' '{print $2}'`
-    CONDA_SUBDIR=osx-arm64
-		conda create -y -p ${VTK_DIR} --no-deps vtk=${VTK_PACKAGE_VERSION} # python=${PY_VER}
+    export CONDA_SUBDIR=osx-arm64
+		conda create -y -p ${VTK_DIR} --no-deps vtk=${VTK_PACKAGE_VERSION}
 fi
 
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
