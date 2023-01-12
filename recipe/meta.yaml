@@ -42,7 +42,7 @@ requirements:
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
-    - vtk
+    - vtk 9.2.1
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
