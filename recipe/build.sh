@@ -7,9 +7,6 @@ set -euo pipefail
 CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
 	-DCMAKE_PREFIX_PATH="${BUILD_PREFIX}" \
-	-DPython3_FIND_STRATEGY=LOCATION \
-	-DPython3_ROOT_DIR=${PREFIX} \
-	-DPython3_EXECUTABLE=${PREFIX}/bin/python \
 	-DCMAKE_BUILD_TYPE=Release
 
 cmake --build build -j ${CPU_COUNT}
