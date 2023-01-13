@@ -32,7 +32,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-    - occt {{ occt_ver }}
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libxi-devel') }}       # [linux]
     - {{ cdt('libxext-devel') }}     # [linux]
@@ -42,7 +41,7 @@ requirements:
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
-    - vtk 9.2.1
+    - vtk
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
