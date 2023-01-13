@@ -4,7 +4,7 @@ set -euo pipefail
 # get vtk library for osx-arm64
 VTK_DIR=${PREFIX}
 if [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
-    VTK_DIR=${RECIPE_DIR}/vtk
+    VTK_DIR=/tmp/vtk
     conda list -p ${BUILD_PREFIX} > packages.txt
     cat packages.txt
     VTK_PACKAGE_VERSION=`grep vtk packages.txt | awk -F ' ' '{print $2}'`
@@ -17,7 +17,7 @@ fi
 # the wrong one when using conda-build. Substitute the right prefix inline.
 CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
-	-DCMAKE_PREFIX_PATH="${VTK_DIR}" \
+	-DVTK_DIR="${VTK_DIR}" \
 	-DPython3_FIND_STRATEGY=LOCATION \
 	-DPython3_ROOT_DIR=${PREFIX} \
 	-DPython3_EXECUTABLE=${PREFIX}/bin/python \
