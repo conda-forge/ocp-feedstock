@@ -17,11 +17,7 @@ fi
 # the wrong one when using conda-build. Substitute the right prefix inline.
 CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
-	-DVTK_DIR=${VTK_DIR} \
-	-DPython3_FIND_STRATEGY=LOCATION \
-	-DPython3_ROOT_DIR=${PREFIX} \
-	-DPython3_EXECUTABLE=${PREFIX}/bin/python \
-	-DCMAKE_BUILD_TYPE=Release
+	-DVTK_DIR=${VTK_DIR}
 
 cmake --build build -j ${CPU_COUNT}
 cmake --install build --prefix "${STDLIB_DIR}"
