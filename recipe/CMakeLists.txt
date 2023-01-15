@@ -8,7 +8,7 @@ endif()
 
 list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR} )
 
-find_package (Python REQUIRED COMPONENTS Interpreter Development)
+find_package (Python3 REQUIRED COMPONENTS Interpreter Development.Module)
 message( STATUS "Python lib: ${Python_LIBRARIES}" )
 
 SET(PYTHON_SP_DIR "site-packages" CACHE PATH "Python site-packages directory (for installing)")
