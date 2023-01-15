@@ -14,7 +14,7 @@ message( STATUS "Python lib: ${Python_LIBRARIES}" )
 SET(PYTHON_SP_DIR "site-packages" CACHE PATH "Python site-packages directory (for installing)")
 
 find_package( pybind11 REQUIRED )
-find_package( VTK REQUIRED )
+find_package( VTK 9 REQUIRED COMPONENTS WrappingPythonCore RenderingCore CommonDataModel CommonExecutionModel )
 find_package( OpenCASCADE REQUIRED )
 
 include_directories( ${PROJECT_SOURCE_DIR} )
