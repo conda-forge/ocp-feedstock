@@ -9,12 +9,16 @@ if [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
     cat packages.txt
     VTK_PACKAGE_VERSION=`grep vtk packages.txt | awk -F ' ' '{print $2}'`
     export CONDA_SUBDIR=osx-arm64
-		conda create -y -p ${VTK_DIR} --no-deps vtk=${VTK_PACKAGE_VERSION}
+		conda create -y -p ${VTK_DIR} --no-deps vtk=${VTK_PACKAGE_VERSION} python=${PY_VER}
 
 		# copy back to ${PREFIX}/lib/python${PY_VER}/site-packages to satisfy
 		# cmake
 		mkdir -p ${PREFIX}/lib/python${PY_VER}/site-packages
-		cp -a /tmp/vtk/lib/python${PY_VER}/site-packages/vtk* ${PREFIX}/lib/python${PY_VER}/site-packages
+		ls ${VTK_DIR}
+		ls ${VTK_DIR}/lib
+		ls ${VTK_DIR}/lib/python${PY_VER}
+		ls ${VTK_DIR}/lib/python${PY_VER}/site-packages
+		cp -a ${VTK_DIR}/lib/python${PY_VER}/site-packages/vtk* ${PREFIX}/lib/python${PY_VER}/site-packages
 fi
 
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
