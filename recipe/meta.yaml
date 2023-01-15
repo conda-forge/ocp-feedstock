@@ -20,7 +20,7 @@ source:
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-18.04.zip"  # [linux]
     sha256: 5c4679cc01c6b9fa75b45c68424f5611e90a6ad94bec8a2d6e8e3902c1e7e5d3  # [linux]
     folder: src
-    patches: CMakeLists-Zm10-win.patch  # [win]
+    # patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
   number: 1
