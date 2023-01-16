@@ -1,6 +1,7 @@
 #!/bin/sh
 set -euo pipefail
 
+rm ${SRC_DIR}/src/FindOpenCascade.cmake
 cp ${RECIPE_DIR}/CMakeLists.txt ${SRC_DIR}/src/CMakeLists.txt
 
 cmake -B build -S "${SRC_DIR}/src" \

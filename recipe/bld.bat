@@ -1,3 +1,6 @@
+del /F /Q %SRC_DIR%\src\FindOpenCascade.cmake
+if errorlevel 1 exit 1
+
 copy /Y "%RECIPE_DIR%\CMakeLists.txt" "%SRC_DIR%\src\CMakeLists.txt"
 if errorlevel 1 exit 1
 
