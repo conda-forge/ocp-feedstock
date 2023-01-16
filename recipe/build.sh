@@ -13,8 +13,8 @@ if [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
 
 		# copy back to ${PREFIX}/lib/python${PY_VER}/site-packages to satisfy
 		# cmake
-		mkdir -p ${PREFIX}/lib/python${PY_VER}/site-packages
-		cp -a ${VTK_DIR}/lib/python${PY_VER}/site-packages/vtk* ${PREFIX}/lib/python${PY_VER}/site-packages
+		# mkdir -p ${PREFIX}/lib/python${PY_VER}/site-packages
+		# cp -a ${VTK_DIR}/lib/python${PY_VER}/site-packages/vtk* ${PREFIX}/lib/python${PY_VER}/site-packages
 fi
 
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
@@ -22,10 +22,7 @@ fi
 # the wrong one when using conda-build. Substitute the right prefix inline.
 CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
-	-DPython3_FIND_STRATEGY=LOCATION \
-	-DPython3_ROOT_DIR=${PREFIX} \
-	-DPython3_EXECUTABLE=${PREFIX}/bin/python \
-	-DCMAKE_BUILD_TYPE=Release
+	-DCMAKE_BUILD_PREFIX=${VTK_DIR}
 
 cmake --build build -j ${CPU_COUNT}
 cmake --install build --prefix "${STDLIB_DIR}"
