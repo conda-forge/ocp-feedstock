@@ -17,10 +17,11 @@ find_package( pybind11 REQUIRED )
 find_package( VTK 9 REQUIRED )
 find_package( OpenCASCADE REQUIRED )
 if( OpenCASCADE_FOUND )
-    message("OpenCASCADE found")
-    message("OpenCASCADE_LIBRARIES: ${OpenCASCADE_LIBRARIES}.")
-    message("OpenCASCADE_INCLUDE_DIR: ${OpenCASCADE_INCLUDE_DIR}.")
+    message(STATUS "OpenCASCADE found")
+    message(STATUS "OpenCASCADE_LIBRARIES: ${OpenCASCADE_LIBRARIES}.")
+    message(STATUS "OpenCASCADE_INCLUDE_DIR: ${OpenCASCADE_INCLUDE_DIR}.")
 endif()
+
 include_directories( ${PROJECT_SOURCE_DIR} )
 file( GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/*.cpp )
 
@@ -28,7 +29,7 @@ add_library( OCP MODULE ${CPP_FILES} )
 
 target_link_libraries( OCP PRIVATE ${OpenCASCADE_LIBRARIES} )
 target_link_libraries( OCP PRIVATE pybind11::pybind11 VTK::WrappingPythonCore VTK::RenderingCore VTK::CommonDataModel VTK::CommonExecutionModel)
-target_include_directories( OCP ${OpenCASCADE_INCLUDE_DIR} )
+target_include_directories( OCP PRIVATE ${OpenCASCADE_INCLUDE_DIR} )
 set_target_properties( OCP
                        PROPERTIES
                        CXX_STANDARD 17
