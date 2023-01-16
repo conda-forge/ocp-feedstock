@@ -16,6 +16,8 @@ SET(PYTHON_SP_DIR "site-packages" CACHE PATH "Python site-packages directory (fo
 find_package( pybind11 REQUIRED )
 find_package( VTK 9 REQUIRED )
 find_package( OpenCASCADE REQUIRED )
+if(OpenCASCADE_FOUND)
+    message(" OpenCASCADE found. OpenCASCADE_LIBRARIES: ${OpenCASCADE_LIBRARIES}.")
 
 include_directories( ${PROJECT_SOURCE_DIR} )
 file( GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/*.cpp )
