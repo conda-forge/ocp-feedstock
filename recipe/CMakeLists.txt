@@ -26,6 +26,7 @@ add_library( OCP MODULE ${CPP_FILES} )
 
 target_link_libraries( OCP PRIVATE ${OpenCASCADE_LIBRARIES} )
 target_link_libraries( OCP PRIVATE pybind11::pybind11 VTK::WrappingPythonCore VTK::RenderingCore VTK::CommonDataModel VTK::CommonExecutionModel)
+target_include_directories( ${OpenCASCADE_INCLUDES})
 set_target_properties( OCP
                        PROPERTIES
                        CXX_STANDARD 17
