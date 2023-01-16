@@ -8,8 +8,8 @@ endif()
 
 list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR} )
 
-find_package (Python3 REQUIRED COMPONENTS Interpreter Development)
-message( STATUS "Python lib: ${Python3_LIBRARIES}" )
+find_package (Python REQUIRED COMPONENTS Interpreter Development)
+message( STATUS "Python lib: ${Python_LIBRARIES}" )
 
 SET(PYTHON_SP_DIR "site-packages" CACHE PATH "Python site-packages directory (for installing)")
 
@@ -47,7 +47,7 @@ if(WIN32)
                               "Standard_IMPORTC=extern \"C\""
                               "_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING")
   target_link_libraries( OCP PRIVATE opengl32 )
-  target_link_libraries( OCP PRIVATE ${Python3_LIBRARIES} )
+  target_link_libraries( OCP PRIVATE ${Python_LIBRARIES} )
 
 else()
   set_target_properties( OCP
