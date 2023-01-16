@@ -14,8 +14,8 @@ message( STATUS "Python lib: ${Python3_LIBRARIES}" )
 SET(PYTHON_SP_DIR "site-packages" CACHE PATH "Python site-packages directory (for installing)")
 
 find_package( pybind11 REQUIRED )
+find_package( VTK 9 REQUIRED )
 find_package( OpenCASCADE REQUIRED )
-find_package( VTK 9 REQUIRED COMPONENTS WrappingPythonCore RenderingCore CommonDataModel CommonExecutionModel )
 
 include_directories( ${PROJECT_SOURCE_DIR} )
 file( GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/*.cpp )
