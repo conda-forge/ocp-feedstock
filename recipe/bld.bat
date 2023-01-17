@@ -7,7 +7,6 @@ if errorlevel 1 exit 1
 cmake -B build -S "%SRC_DIR%\src" ^
 	-G Ninja ^
 	-DCMAKE_BUILD_TYPE=Release ^
-	-DPython_FIND_STRATEGY=LOCATION ^
 	-DPython_ROOT_DIR=%PREFIX% ^
 	-DCMAKE_LINKER=lld-link.exe ^
 	-DCMAKE_MODULE_LINKER_FLAGS="/machine:x64 /FORCE:MULTIPLE"
