@@ -6,7 +6,7 @@ cp ${RECIPE_DIR}/CMakeLists.txt ${SRC_DIR}/src/CMakeLists.txt
 
 cmake -B build -S "${SRC_DIR}/src" \
 	-G Ninja \
-	-DPython3_ROOT_DIR=${PREFIX} \
+	-DPython_ROOT_DIR=${PREFIX} \
 	-DCMAKE_BUILD_TYPE=Release
 
 cmake --build build -j ${CPU_COUNT}
