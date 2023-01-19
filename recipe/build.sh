@@ -4,6 +4,8 @@ set -euo pipefail
 # only use the dummy cmake file for osx-arm64
 if ! [[ "$OSTYPE" == "darwin"* && $OSX_ARCH == "arm64" ]]; then
     rm FindVTK.cmake
+else
+    ls
 fi
 
 # FindOpenCascade.cmake bundled with OCP references the env var `CONDA_PREFIX`.
