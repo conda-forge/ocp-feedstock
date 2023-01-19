@@ -1,19 +1,19 @@
 message( STATUS Using custom FindVTK )
 
-add_library( VTK::WrappingPythonCore SHARED IMPORTED )
-add_library( VTK::RenderingCore SHARED IMPORTED )
-add_library( VTK::CommonDataModel SHARED IMPORTED )
-add_library( VTK::CommonExecutionModel SHARED IMPORTED )
-add_library( VTK::CommonCore SHARED IMPORTED )
-add_library( VTK::Sys SHARED IMPORTED )
+add_library( VTK::WrappingPythonCore UNKNOWN IMPORTED )
+add_library( VTK::RenderingCore UNKNOWN IMPORTED )
+add_library( VTK::CommonDataModel UNKNOWN IMPORTED )
+add_library( VTK::CommonExecutionModel UNKNOWN IMPORTED )
+add_library( VTK::CommonCore UNKNOWN IMPORTED )
+add_library( VTK::Sys UNKNOWN IMPORTED )
 
-file( GLOB python_core_file "$ENV{PREFIX}/lib/libvtkWrappingPythonCore*")
-file( GLOB rendering_core_file "$ENV{PREFIX}/lib/libvtkRenderingCore*")
-file( GLOB data_model_file "$ENV{PREFIX}/lib/libvtkCommonDataModel*")
-file( GLOB execution_model_file "$ENV{PREFIX}/lib/libvtkCommonExecutionModel*")
-file( GLOB common_core_file "$ENV{PREFIX}/lib/libvtkCommonCore*")
-file( GLOB sys_file "$ENV{PREFIX}/lib/libvtksys*")
-file( GLOB include_dir LIST_DIRECTORIES True "$ENV{PREFIX}/include/vtk-*")
+file( GLOB python_core_file "$ENV{CONDA_PREFIX}/lib/libvtkWrappingPythonCore*")
+file( GLOB rendering_core_file "$ENV{CONDA_PREFIX}/lib/libvtkRenderingCore*")
+file( GLOB data_model_file "$ENV{CONDA_PREFIX}/lib/libvtkCommonDataModel*")
+file( GLOB execution_model_file "$ENV{CONDA_PREFIX}/lib/libvtkCommonExecutionModel*")
+file( GLOB common_core_file "$ENV{CONDA_PREFIX}/lib/libvtkCommonCore*")
+file( GLOB sys_file "$ENV{CONDA_PREFIX}/lib/libvtksys*")
+file( GLOB include_dir LIST_DIRECTORIES True "$ENV{CONDA_PREFIX}/include/vtk-*")
 
 set_target_properties( VTK::WrappingPythonCore PROPERTIES
 	INTERFACE_INCLUDE_DIRECTORIES "${include_dir}"
@@ -41,4 +41,4 @@ set_target_properties( VTK::Sys PROPERTIES
 	IMPORTED_LOCATION "${sys_file}"
 )
 
-message( STATUS "VTK include dir: ${include_dir}" )
+message( STATUS "VTK py core file: ${python_core_file}" )
