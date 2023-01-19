@@ -8,7 +8,7 @@ add_library( VTK::CommonCore SHARED IMPORTED )
 add_library( VTK::Sys SHARED IMPORTED )
 
 file( GLOB python_core_file "$ENV{PREFIX}/lib/libvtkWrappingPythonCore*")
-file( GLOB rendernig_core_file "$ENV{PREFIX}/lib/libvtkRenderingCore*")
+file( GLOB rendering_core_file "$ENV{PREFIX}/lib/libvtkRenderingCore*")
 file( GLOB data_model_file "$ENV{PREFIX}/lib/libvtkCommonDataModel*")
 file( GLOB execution_model_file "$ENV{PREFIX}/lib/libvtkCommonExecutionModel*")
 file( GLOB common_core_file "$ENV{PREFIX}/lib/libvtkCommonCore*")
@@ -17,7 +17,7 @@ file( GLOB include_dir LIST_DIRECTORIES True "$ENV{PREFIX}/include/vtk-*")
 
 set_target_properties( VTK::WrappingPythonCore PROPERTIES
 	INTERFACE_INCLUDE_DIRECTORIES "${include_dir}"
-	INTERFACE_LINK_LIBRARIES "VTK::CommonCore;VTK::sys"
+	INTERFACE_LINK_LIBRARIES "VTK::CommonCore;VTK::Sys"
 	IMPORTED_LOCATION "${python_core_file}"
 )
 
