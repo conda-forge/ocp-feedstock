@@ -11,7 +11,6 @@ source:
   - url: https://raw.githubusercontent.com/CadQuery/OCP/{{ version }}/LICENSE
     fn: {{ name }}-{{ version }}-LICENSE.txt
     sha256: a13caea71627202ad33cc4cafafdd18e667e16716488f8d9c568127121fb89fd
-  - path: .
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip"  # [win]
