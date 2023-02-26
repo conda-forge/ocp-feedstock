@@ -6,6 +6,7 @@ add_library( VTK::CommonDataModel SHARED IMPORTED )
 add_library( VTK::CommonExecutionModel SHARED IMPORTED )
 add_library( VTK::CommonCore SHARED IMPORTED )
 add_library( VTK::Sys SHARED IMPORTED )
+add_library( VTK::RenderingFreeType SHARED IMPORTED )
 
 file( GLOB python_core_file "$ENV{PREFIX}/lib/libvtkWrappingPythonCore*")
 file( GLOB rendering_core_file "$ENV{PREFIX}/lib/libvtkRenderingCore*")
@@ -13,6 +14,7 @@ file( GLOB data_model_file "$ENV{PREFIX}/lib/libvtkCommonDataModel*")
 file( GLOB execution_model_file "$ENV{PREFIX}/lib/libvtkCommonExecutionModel*")
 file( GLOB common_core_file "$ENV{PREFIX}/lib/libvtkCommonCore*")
 file( GLOB sys_file "$ENV{PREFIX}/lib/libvtksys*")
+file( GLOB rendering_freetype_file "$ENV{PREFIX}/lib/libvtkRenderingFreeType*")
 
 file( GLOB include_dir LIST_DIRECTORIES True "$ENV{PREFIX}/include/vtk-*")
 
@@ -48,6 +50,10 @@ set_target_properties( VTK::CommonCore PROPERTIES
 
 set_target_properties( VTK::Sys PROPERTIES
 	IMPORTED_LOCATION "${sys_file}"
+)
+
+set_target_properties( VTK::RenderingFreeType PROPERTIES
+  	IMPORTED_LOCATION "${rendering_freetype_file}"
 )
 
 message( STATUS "VTK py core file: ${python_core_file}" )
