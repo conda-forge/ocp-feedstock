@@ -9,6 +9,9 @@ list( APPEND target_names
     CommonCore
     Sys
     RenderingFreeType
+    InteractionStyle
+    RenderingOpenGL2
+    RenderingGL2PSOpenGL2
 )
  
 list( APPEND target_files
@@ -20,6 +23,9 @@ list( APPEND target_files
     libvtkCommonCore
     libvtksys
     libvtkRenderingFreeType
+    libvtkInteractionStyle
+    libvtkRenderingOpenGL2
+    libvtkRenderingGL2PSOpenGL2
 )
 
 foreach( name lib_pat IN ZIP_LISTS target_names target_files)
