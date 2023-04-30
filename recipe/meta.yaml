@@ -45,7 +45,7 @@ requirements:
     - vtk
   run:
     - python
-    - {{ pin_compatible('occt', max_pin='x.x.x') }}
+    - {{ pin_compatible('occt', max_pin='x.x.x.x') }}
     - {{ pin_compatible('vtk', max_pin='x.x') }}
 
 test:
