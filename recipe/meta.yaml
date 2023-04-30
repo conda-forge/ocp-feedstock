@@ -1,6 +1,6 @@
 {% set name = "ocp" %}
-{% set version = "7.6.3.0" %}
-{% set occt_ver = "7.6.3" %}
+{% set version = "7.7.0.0" %}
+{% set occt_ver = "7.7.0" %}
 
 package:
   name: {{ name }}
@@ -14,11 +14,11 @@ source:
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip"  # [win]
-    sha256: a7273a46540eda2201bfc49ccc744deb8b08f0058ace7a334b81a68764e18293  # [win]
+    sha256: 6904ffe6031cfa0fa75969cbd94f222a1233c7651542a513595a8a07b3fbca8f  # [win]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_macOS-10.15.zip"   # [osx]
-    sha256: b63f9e36526ecc08f1e96e601118dbeeea8b9da2ddbb3bdcfe3e02f952f1fe34  # [osx]
+    sha256: ac9da29a5741579422086afdefd1f00066219a5402c761ded85f76317e1c8812  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-18.04.zip"  # [linux]
-    sha256: 5c4679cc01c6b9fa75b45c68424f5611e90a6ad94bec8a2d6e8e3902c1e7e5d3  # [linux]
+    sha256: 3a33cdb524baadf9d79482f21bd1e1c6ee3976ddd201e83234ff569d5771c512  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
@@ -27,6 +27,8 @@ build:
 
 requirements:
   build:
+    - python                                # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - cmake
     - ninja
@@ -34,6 +36,7 @@ requirements:
     - {{ cdt('libxi-devel') }}       # [linux]
     - {{ cdt('libxext-devel') }}     # [linux]
     - lld  # [win]
+    - boost 1.78.*
   host:
     - python
     - pybind11
@@ -43,7 +46,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
-    - vtk
+    - {{ pin_compatible('vtk', max_pin='x.x') }}
 
 test:
   imports:
