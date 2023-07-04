@@ -1,5 +1,5 @@
 {% set name = "ocp" %}
-{% set version = "7.7.0.1" %}
+{% set version = "7.7.1.0" %}
 {% set occt_ver = "7.7.0" %}
 
 package:
@@ -13,12 +13,12 @@ source:
     sha256: a13caea71627202ad33cc4cafafdd18e667e16716488f8d9c568127121fb89fd
 
   # binding sources
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip"  # [win]
-    sha256: cb87c49cd914dcbfb0756ac482f781c03664d1ec2de0ce68c8271576238ba5a7  # [win]
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_macOS-latest.zip"   # [osx]
-    sha256: 7bfc5d944efc66299e93ca12cf467a5b9fadb6e65792bdf2cdd78a3a7315331d  # [osx]
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-20.04.zip"  # [linux]
-    sha256: 2c5bf4d822b9ac1f6c225689d2280df54eb3e82e9a03ddb09c2d2061ee5c7500  # [linux]
+  - url: https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip  # [win]
+    sha256: cbf3631728a52b8cb689069ef4cb05ac8612743cf4a346168a3e3da4b7c5c914  # [win]
+  - url: https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_macOS-latest.zip  # [osx]
+    sha256: 75c4614baf2918ffb0f66d740964dfa5e25066b5e98235d877c7d61254eafa93  # [osx]
+  - url: https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-20.04.zip  # [linux]
+    sha256: c7dc3612e89a7aabc260e819381df0343c7d3e57a30dbd1aa3dbbf237965f40b  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
@@ -60,7 +60,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: {{ name }}-{{ version }}-LICENSE.txt
-  summary: 'Python wrapper for OCCT using auto-generated pybind11 bindings.'
+  summary: Python wrapper for OCCT using auto-generated pybind11 bindings.
   doc_url: https://github.com/CadQuery/OCP/blob/master/README.md
   dev_url: https://github.com/CadQuery/OCP/
 
