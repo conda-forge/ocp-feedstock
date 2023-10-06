@@ -41,7 +41,7 @@ requirements:
     - python
     - pybind11
     - pybind11-abi
-    - occt {{ occt_ver }}
+    - occt {{ occt_ver }} all*
     - vtk
   run:
     - python
