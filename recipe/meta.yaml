@@ -1,6 +1,6 @@
 {% set name = "ocp" %}
-{% set version = "7.7.1.0" %}
-{% set occt_ver = "7.7.1" %}
+{% set version = "7.7.2.0" %}
+{% set occt_ver = "7.7.2" %}
 
 package:
   name: {{ name }}
@@ -13,17 +13,17 @@ source:
     sha256: a13caea71627202ad33cc4cafafdd18e667e16716488f8d9c568127121fb89fd
 
   # binding sources
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_windows-2019.zip"  # [win]
-    sha256: cbf3631728a52b8cb689069ef4cb05ac8612743cf4a346168a3e3da4b7c5c914  # [win]
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_macOS-latest.zip"   # [osx]
-    sha256: 75c4614baf2918ffb0f66d740964dfa5e25066b5e98235d877c7d61254eafa93  # [osx]
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_Ubuntu-20.04.zip"  # [linux]
-    sha256: c7dc3612e89a7aabc260e819381df0343c7d3e57a30dbd1aa3dbbf237965f40b  # [linux]
+  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_windows-2019.zip"  # [win]
+    sha256: d48ddf32ac61f29c9f6fdabcc854ec5369c9e2fb1ceb54a965fbfb2b7810cac9  # [win]
+  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_macOS-latest.zip"   # [osx]
+    sha256: bc7d56990eac7eb9de8163dc3f538c554eeaf57c51b69df90fc7b65bfeaa2049  # [osx]
+  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Ubuntu-20.04.zip"  # [linux]
+    sha256: 1607c056e5d21b661c528f73d623b8cd911603935ade429eea6c6bf492e042cb  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
