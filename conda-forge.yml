@@ -5,7 +5,9 @@ azure:
       SET_PAGEFILE: 'True'
 build_platform:
   osx_arm64: osx_64
-  linux_aarch64: linux_aarch64
+provider:
+  linux_aarch64: azure
+  linux_ppc64le: azure
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
