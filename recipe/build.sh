@@ -19,3 +19,4 @@ CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 
 cmake --build build -j ${CPU_COUNT}
 cmake --install build --prefix "${STDLIB_DIR}"
+cmake -E copy_directory "${SRC_DIR}/src/OCP-stubs" "${SP_DIR}/OCP-stubs"

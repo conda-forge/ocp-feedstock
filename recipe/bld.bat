@@ -16,3 +16,6 @@ if errorlevel 1 exit 1
 
 cmake --install build --prefix "%STDLIB_DIR%"
 if errorlevel 1 exit 1
+
+cmake -E copy_directory "%SRC_DIR%/src/OCP-stubs" "%SP_DIR%/OCP-stubs"
+if errorlevel 1 exit 1
