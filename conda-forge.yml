@@ -1,4 +1,7 @@
 azure:
+  settings_win:
+    variables:
+      SET_PAGEFILE: 'True'
   store_build_artifacts: false
   settings_win:
     variables:
