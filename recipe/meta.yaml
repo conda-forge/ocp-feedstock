@@ -37,7 +37,7 @@ requirements:
     - {{ cdt('libxi-devel') }}       # [linux]
     - {{ cdt('libxext-devel') }}     # [linux]
     - lld  # [win]
-    - boost-cpp 1.82.*
+    - libboost-devel 1.82.*
   host:
     - python
     - pybind11
