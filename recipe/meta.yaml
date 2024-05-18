@@ -1,5 +1,5 @@
 {% set name = "ocp" %}
-{% set version = "7.7.2.0" %}
+{% set version = "7.7.2.1" %}
 {% set occt_ver = "7.7.2" %}
 
 package:
@@ -14,29 +14,30 @@ source:
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_windows-2019.zip"  # [win]
-    sha256: d48ddf32ac61f29c9f6fdabcc854ec5369c9e2fb1ceb54a965fbfb2b7810cac9  # [win]
-  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_macOS-latest.zip"   # [osx]
-    sha256: bc7d56990eac7eb9de8163dc3f538c554eeaf57c51b69df90fc7b65bfeaa2049  # [osx]
+    sha256: f1592b1e8642dc891ac397caf3be7ea3928f49f6efaa2502715f3695ec11cc72  # [win]
+  - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_macOS-latest.zip"  # [osx]
+    sha256: 16007bf8531bde3cb33b9df67c6fe4246e5dad400a4bd3eed3411ebbc13f61c2  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Ubuntu-20.04.zip"  # [linux]
-    sha256: 1607c056e5d21b661c528f73d623b8cd911603935ade429eea6c6bf492e042cb  # [linux]
+    sha256: 25822ac654b32769bfd84df9b9ff7024dadb50080b5fd3b58898b6f4f41af003  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
     - python                                # [build_platform != target_platform]
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - ninja
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libxi-devel') }}       # [linux]
     - {{ cdt('libxext-devel') }}     # [linux]
     - lld  # [win]
-    - boost-cpp 1.82.*
+    - libboost-devel 1.82.*
   host:
     - python
     - pybind11
