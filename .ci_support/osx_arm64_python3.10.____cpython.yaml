@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -29,4 +31,4 @@ python:
 target_platform:
 - osx-arm64
 vtk:
-- 9.2.6
+- 9.3.0
