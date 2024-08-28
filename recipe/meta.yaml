@@ -48,6 +48,9 @@ requirements:
   run:
     - python
     - {{ pin_compatible('occt', max_pin='x.x.x') }}
+  run_constrained:
+    # we require the vtk variant of occt name "all", and not the "novtk"
+    - occt *=*_all
 
 test:
   imports:
