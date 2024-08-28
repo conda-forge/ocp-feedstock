@@ -24,6 +24,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [py!=310]
 
 requirements:
   build:
