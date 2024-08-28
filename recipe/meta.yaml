@@ -40,7 +40,7 @@ requirements:
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
-    - vtk-base
+    - vtk
     - libboost-devel
     - libgl-devel   # [linux]
     - xorg-libxi    # [linux]
