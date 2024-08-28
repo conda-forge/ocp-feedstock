@@ -48,6 +48,7 @@ requirements:
     - xorg-libxext  # [linux]
   run:
     - python
+    - {{ pin_compatible('occt', max_pin='x.x.x') }}
 
 test:
   imports:
