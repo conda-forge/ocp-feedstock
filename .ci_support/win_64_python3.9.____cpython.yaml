@@ -1,0 +1,26 @@
+c_compiler:
+- vs2019
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2019
+libboost_devel:
+- '1.84'
+occt:
+- 7.7.2
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+pybind11_abi:
+- '4'
+python:
+- 3.9.* *_cpython
+target_platform:
+- win-64
+vtk:
+- 9.2.6
