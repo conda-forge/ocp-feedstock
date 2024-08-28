@@ -23,31 +23,34 @@ source:
     patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - python                                # [build_platform != target_platform]
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - cmake
     - ninja
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('libxi-devel') }}       # [linux]
-    - {{ cdt('libxext-devel') }}     # [linux]
     - lld  # [win]
-    - libboost-devel 1.82.*
   host:
     - python
     - pybind11
     - pybind11-abi
     - occt {{ occt_ver }}
     - vtk
+    - libboost-devel
+    - libgl-devel   # [linux]
+    - xorg-libxi    # [linux]
+    - xorg-libxext  # [linux]
   run:
     - python
-    - {{ pin_compatible('occt', exact=True) }}
-    - {{ pin_compatible('vtk', max_pin='x.x') }}
+    - {{ pin_compatible('occt', max_pin='x.x.x') }}
+  run_constrained:
+    # we require the vtk variant of occt name "all", and not the "novtk"
+    - occt *=*_all
 
 test:
   imports:
