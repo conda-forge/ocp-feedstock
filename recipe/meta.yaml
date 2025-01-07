@@ -43,12 +43,14 @@ requirements:
     - libgl-devel  # [linux]
     - xorg-xorgproto  # [linux]
     - occt {{ occt_ver }}
+    - occt * all*
     - tbb-devel
     - vtk
   run:
     - python
     - {{ pin_compatible('occt', exact=True) }}
     - {{ pin_compatible('vtk', max_pin='x.x') }}
+    - occt * all*
 
 test:
   imports:
