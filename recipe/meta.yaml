@@ -43,6 +43,7 @@ requirements:
     - libgl-devel  # [linux]
     - xorg-xorgproto  # [linux]
     - occt {{ occt_ver }}
+    - tbb-devel
     - vtk
   run:
     - python
