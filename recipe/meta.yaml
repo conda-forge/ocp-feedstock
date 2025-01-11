@@ -10,15 +10,15 @@ source:
   # currently only used for the license file
   - url: https://raw.githubusercontent.com/CadQuery/OCP/{{ version }}/LICENSE
     fn: {{ name }}-{{ version }}-LICENSE.txt
-    sha256: a37202c633547f52dfbd343b6c543f40fd7f43c29f6ee0835b112fb812483318
+    sha256: a13caea71627202ad33cc4cafafdd18e667e16716488f8d9c568127121fb89fd
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_windows-2019.zip"  # [win]
-    sha256: f1592b1e8642dc891ac397caf3be7ea3928f49f6efaa2502715f3695ec11cc72  # [win]
+    sha256: c2f84418e02f27a5fc4a627f14f3e21260894332faf4f6488352ea823a545c70  # [win]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_macOS-latest.zip"  # [osx]
-    sha256: 16007bf8531bde3cb33b9df67c6fe4246e5dad400a4bd3eed3411ebbc13f61c2  # [osx]
+    sha256: 1b03be6ddd91ac99fbb46ca7ae007d9682fbc10f4194cf0c3ef38e62be9a9ae3  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Ubuntu-20.04.zip"  # [linux]
-    sha256: 25822ac654b32769bfd84df9b9ff7024dadb50080b5fd3b58898b6f4f41af003  # [linux]
+    sha256: a37202c633547f52dfbd343b6c543f40fd7f43c29f6ee0835b112fb812483318  # [linux]
     folder: src
     patches: CMakeLists-Zm10-win.patch  # [win]
 
