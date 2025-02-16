@@ -45,7 +45,7 @@ requirements:
     - occt {{ occt_ver }}
     - occt * all*
     - tbb-devel
-    - vtk = 9.2
+    - vtk =9.2
   run:
     - python
     - {{ pin_compatible('occt', exact=True) }}
