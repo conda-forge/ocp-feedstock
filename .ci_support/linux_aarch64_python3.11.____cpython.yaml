@@ -21,7 +21,7 @@ docker_image:
 libboost_devel:
 - '1.86'
 occt:
-- 7.8.1
+- 7.9.0
 pin_run_as_build:
   python:
     min_pin: x.x
