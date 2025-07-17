@@ -17,6 +17,6 @@ CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-DCMAKE_MODULE_PATH="${RECIPE_DIR}" \
 	-DCMAKE_BUILD_TYPE=Release
 
-cmake --build build -j ${CPU_COUNT}
+cmake --build build -j ${CPU_COUNT} -- -k 0
 cmake --install build --prefix "${STDLIB_DIR}"
 cmake -E copy_directory "${SRC_DIR}/src/OCP-stubs" "${SP_DIR}/OCP-stubs"
