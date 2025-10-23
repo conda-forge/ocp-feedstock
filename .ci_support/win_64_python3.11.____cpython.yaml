@@ -1,5 +1,5 @@
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -7,11 +7,11 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 libboost_devel:
-- '1.84'
+- '1.86'
 occt:
-- 7.7.2
+- 7.8.1
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -23,4 +23,4 @@ python:
 target_platform:
 - win-64
 vtk:
-- 9.2.6
+- 9.5.1
