@@ -20,7 +20,6 @@ source:
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Linux.zip"  # [linux]
     sha256: a9c7e8c6355aeba17f90e130b62d7df126214492d58acac12d7421c92bdb22ec  # [linux]
     folder: src
-    patches: CMakeLists-Zm10-win.patch  # [win]
 
 build:
   number: 0
