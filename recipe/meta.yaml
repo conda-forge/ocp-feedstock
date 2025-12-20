@@ -39,7 +39,6 @@ requirements:
     - python
     - pybind11
     - pybind11-abi
-    - libboost-devel
     - libgl-devel  # [linux]
     - xorg-xorgproto  # [linux]
     - occt {{ occt_ver }}
