@@ -23,7 +23,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 pybind11_abi:
-- '4'
+- '11'
 python:
 - 3.14.* *_cp314
 target_platform:
@@ -31,7 +31,7 @@ target_platform:
 tbb_devel:
 - '2022'
 vtk:
-- 9.5.1
+- 9.5.2
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
