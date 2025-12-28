@@ -1,5 +1,5 @@
 {% set name = "ocp" %}
-{% set version = "7.9.2.0" %}
+{% set version = "7.9.3.0" %}
 {% set occt_ver = "7.9.2" %}
 
 package:
@@ -14,15 +14,15 @@ source:
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Windows.zip"  # [win]
-    sha256: 85105385f100f14380d57a37695d2ab127da6616f21f734c8741419cb33e9462  # [win]
+    sha256: 7323c79788e83d98eb24b66494f8eeec7d1a4a96f897877d61361603faff418d  # [win]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_OSX.zip"  # [osx]
-    sha256: 53e06174f07440f58dc968b3a2a6bfeb67b473754299f237c28ac0ba5d360151  # [osx]
+    sha256: cd0656ff9821f639df128881eae8b9dc92724dcebad3cac2d2bae728fa1ab7e5  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Linux.zip"  # [linux]
-    sha256: a9c7e8c6355aeba17f90e130b62d7df126214492d58acac12d7421c92bdb22ec  # [linux]
+    sha256: 8861a56da865c6857c9c508f5c42a7201cf74e385e886920aa822a588d55c8e1  # [linux]
     folder: src
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
