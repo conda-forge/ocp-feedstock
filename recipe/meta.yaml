@@ -1,6 +1,6 @@
 {% set name = "ocp" %}
 {% set version = "7.9.3.0" %}
-{% set occt_ver = "7.9.2" %}
+{% set occt_ver = "7.9.3" %}
 
 package:
   name: {{ name }}
