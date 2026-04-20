@@ -19,7 +19,7 @@ docker_image:
 fmt:
 - '12.1'
 occt:
-- 7.9.1
+- 7.9.3
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -33,7 +33,7 @@ target_platform:
 tbb_devel:
 - '2022'
 vtk:
-- 9.6.0
+- 9.6.1
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
