@@ -22,7 +22,7 @@ source:
     folder: src
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
