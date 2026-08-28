@@ -37,7 +37,7 @@ target_platform:
 tbb_devel:
 - '2023'
 vtk:
-- 9.6.2
+- 9.7.0
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
