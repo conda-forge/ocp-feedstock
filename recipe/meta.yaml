@@ -1,6 +1,6 @@
 {% set name = "ocp" %}
-{% set version = "8.0.0.1" %}
-{% set occt_ver = "8.0.0" %}
+{% set version = "8.0.1.0" %}
+{% set occt_ver = "8.0.1" %}
 
 package:
   name: {{ name }}
@@ -14,11 +14,11 @@ source:
 
   # binding sources
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Windows.zip"  # [win]
-    sha256: 2b76d5c254afa2470c139de6e6e3449f17045574cfcbe1645c89654848802ea7  # [win]
+    sha256: 4e95455ec20e414e303948d419fdf562ed2127cbfbe0dc348ffce737ea199794  # [win]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_OSX.zip"  # [osx]
-    sha256: 0b0be8fad3fea5aa436c4f8d6c242810cf047041de6a54a38d7a9692772a4fb8  # [osx]
+    sha256: 2b59073821db67cf93f3cbfea90b715b9322a4f8b39aeea18dd6e65458cf736b  # [osx]
   - url: "https://github.com/CadQuery/OCP/releases/download/{{ version }}/OCP_src_stubs_Linux.zip"  # [linux]
-    sha256: f93d613d0d7b06e6bb2199a246e2489be936a730819b7a33e9e4a272d6edd3ad  # [linux]
+    sha256: b0b83c661c1c5ec70371314a13267a0d1515eb72d860dd9c80d79ee7985e4fec  # [linux]
     folder: src
 
 build:
