@@ -15,7 +15,9 @@ CONDA_PREFIX="${PREFIX}" cmake ${CMAKE_ARGS} -B build -S "${SRC_DIR}/src" \
 	-DPython3_ROOT_DIR=${PREFIX} \
 	-DPython3_EXECUTABLE=${PREFIX}/bin/python \
 	-DCMAKE_MODULE_PATH="${RECIPE_DIR}" \
-	-DCMAKE_BUILD_TYPE=Release
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_CXX_VISIBILITY_PRESET=hidden \
+	-DCMAKE_VISIBILITY_INLINES_HIDDEN=ON
 
 cmake --build build -j 1
 cmake --install build --prefix "${STDLIB_DIR}"
