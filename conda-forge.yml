@@ -1,18 +1,18 @@
-azure:
-  free_disk_space: true
-  settings_linux:
-    swapfile_size: 10GiB
-  settings_win:
-    variables:
-      SET_PAGEFILE: 'True'
-  store_build_artifacts: false
-build_platform:
-  linux_aarch64: linux_64
-  osx_arm64: osx_64
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+provider:
+  linux_aarch64: default
+  osx_arm64: default
 test: native_and_emulated
+workflow_settings:
+  free_disk_space: quick
+  pagefile_size:
+  - os: linux
+    value: 10
+  - os: win
+    value: 16
+  store_build_artifacts: false
