@@ -11,7 +11,7 @@ cxx_compiler:
 fmt:
 - '12.1'
 occt:
-- 8.0.0
+- 8.0.1
 pin_run_as_build:
   python:
     min_pin: x.x
