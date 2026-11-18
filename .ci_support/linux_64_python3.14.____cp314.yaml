@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 c_compiler:
 - gcc
 c_compiler_version:
@@ -25,7 +27,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 pybind11_abi:
-- '11'
+- '12'
 python:
 - 3.14.* *_cp314
 target_platform:
